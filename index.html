@@ -2,75 +2,101 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#e74c3c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
     <title>Sicherheitshinweis - IT Security</title>
     <style>
         :root {
             --primary-color: #e74c3c;
             --secondary-color: #2c3e50;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9f9;
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body, html {
+            height: 100%;
             margin: 0;
+            padding: 0;
+            overflow: hidden; /* Verhindert Scrollen für App-Gefühl */
+            background-color: #f9f9f9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            color: #333;
         }
         .container {
             background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 400px;
-            width: 90%;
+            padding: 40px 25px;
+            height: 100vh; /* Füllt die komplette Höhe */
+            width: 100vw;  /* Füllt die komplette Breite */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            border-top: 8px solid var(--primary-color);
+            border-top: 12px solid var(--primary-color);
         }
         .icon {
-            font-size: 50px;
-            margin-bottom: 20px;
+            font-size: 70px;
+            margin-bottom: 25px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         h1 {
             color: var(--secondary-color);
-            font-size: 22px;
-            margin-bottom: 10px;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
         p {
             line-height: 1.6;
-            font-size: 16px;
+            font-size: 17px;
+            color: #444;
+            max-width: 320px;
         }
         .alert-box {
             background-color: #fff5f5;
-            border: 1px dashed var(--primary-color);
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
+            border: 2px dashed var(--primary-color);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            font-size: 16px;
         }
         .footer {
-            margin-top: 25px;
-            font-size: 12px;
-            color: #999;
+            position: absolute;
+            bottom: 30px;
+            font-size: 13px;
+            color: #bbb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="icon">⚠️</div>
-        <h1>Sicherheitstraining: QR-Code Check</h1>
-        <p>Du hast gerade einen QR-Code gescannt, der als <strong>"Gäste WLAN"</strong> getarnt war.</p>
+        <h1>IT-SICHERHEITS-CHECK</h1>
+        <p>Sie haben versucht, eine Verbindung zu einem unbekannten <strong>"Gäste WLAN"</strong> herzustellen.</p>
         
         <div class="alert-box">
-            <strong>Gut aufgepasst!</strong><br>
-            Diesmal war es nur ein Test der IT-Abteilung. In einem echten Angriff hätten Kriminelle nun Zugriff auf deine Daten oder dein Gerät haben können.
+            <strong>TEST BESTANDEN?</strong><br><br>
+            Dies war ein simulierter Phishing-Test Ihrer IT-Abteilung. In einem echten Szenario hätte Ihr Gerät jetzt kompromittiert sein können.
         </div>
 
-        <p><strong>Goldene Regel:</strong> Scanne niemals QR-Codes aus unbekannten Quellen, auch wenn sie nützlich erscheinen.</p>
+        <p style="margin-top: 30px; font-size: 14px;">Bitte melden Sie diesen Vorfall nicht, sondern behalten Sie den Test für sich, um die Ergebnisse nicht zu verfälschen.</p>
         
         <div class="footer">
-            Interne Sensibilisierungskampagne &copy; 2026 IT-Security Team
+            Unternehmenssicherheit &copy; 2026
         </div>
     </div>
 
